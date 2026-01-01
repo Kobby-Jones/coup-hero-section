@@ -1,26 +1,186 @@
-@import "tailwindcss";
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* General Sans Font */
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-Regular.woff2') format('woff2'),
+       url('/fonts/GeneralSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-Medium.woff2') format('woff2'),
+       url('/fonts/GeneralSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-Bold.woff2') format('woff2'),
+       url('/fonts/GeneralSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'General Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  overflow-x: auto;
+  min-width: 1920px;
+}
+
+/* Nav Link Hover Effect */
+.nav-link:hover span {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+/* Contact Sales Button Water Effect - Fixed */
+.contact-sales-btn:hover .button-bg {
+  transform: scaleX(0);
+}
+
+.contact-sales-btn .button-bg {
+  transform: scaleX(1);
+}
+
+.contact-sales-btn:hover span {
+  color: rgba(0, 122, 255, 1) !important;
+}
+
+/* Bird Animations */
+
+/* 1. First bird on top left - flies in from bottom of page */
+.bird-fly-in {
+  animation: flyIn 1s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translateY(1080px);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 2. Second bird on top left - shadow animation */
+.bird-shadow {
+  position: relative;
+}
+
+.bird-shadow-animate {
+  animation: shadowFly 1s ease-in forwards;
+  animation-delay: 0.3s;
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+@keyframes shadowFly {
+  0% {
+    transform: translateY(1080px);
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+/* 3. Birds flying across the page diagonally */
+.bird-cross-left {
+  position: absolute;
+  animation: crossLeft 4s linear forwards;
+  animation-delay: 1.5s;
+  z-index: 10;
+  opacity: 0;
+}
+
+.bird-cross-right {
+  position: absolute;
+  animation: crossRight 4s linear forwards;
+  animation-delay: 1.5s;
+  z-index: 10;
+  opacity: 0;
+}
+
+@keyframes crossLeft {
+  0% {
+    left: -150px;
+    top: 600px;
+    opacity: 1;
+  }
+  50% {
+    left: 960px;
+    top: 480px;
+    opacity: 1;
+  }
+  99% {
+    left: 2070px;
+    top: 360px;
+    opacity: 1;
+  }
+  100% {
+    left: 2070px;
+    top: 360px;
+    opacity: 0;
+  }
+}
+
+@keyframes crossRight {
+  0% {
+    left: 2000px;
+    top: 600px;
+    transform: scaleX(-1);
+    opacity: 1;
+  }
+  50% {
+    left: 860px;
+    top: 480px;
+    transform: scaleX(-1);
+    opacity: 1;
+  }
+  99% {
+    left: -280px;
+    top: 360px;
+    transform: scaleX(-1);
+    opacity: 1;
+  }
+  100% {
+    left: -280px;
+    top: 360px;
+    transform: scaleX(-1);
+    opacity: 0;
+  }
 }
