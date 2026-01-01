@@ -178,7 +178,7 @@ This project was created as part of a technical assessment for Feeble.
 
 **Your Name**
 - GitHub: [@Kobby-Jones](https://github.com/Kobby-Jones)
-- Email: your.email@example.com
+- Email: cobbina1.emmanuel@gmail.com
 
 ---
 
