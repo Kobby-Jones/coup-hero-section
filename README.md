@@ -4,7 +4,7 @@ A pixel-perfect implementation of the Coup landing page hero section, built as p
 
 ##  Live Demo
 
-[Live Website URL](your-deployed-url-here)
+[Live Website URL](https://coup-hero-section.vercel.app/)
 
 ##  Project Overview
 

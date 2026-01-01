@@ -15,7 +15,8 @@ export default function HeroBadge() {
         paddingBottom: '5px',
         paddingLeft: '8px',
         background: 'rgba(255, 255, 255, 1)',
-        boxShadow: '0 0.25px 1px 0 rgba(0, 0, 0, 0.1)'
+        boxShadow: '0 0.25px 1px 0 rgba(0, 0, 0, 0.1)',
+        marginTop: '60px'
       }}
     >
       <div style={{
