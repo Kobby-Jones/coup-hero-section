@@ -8,7 +8,8 @@ export default function HeroContent() {
       style={{
         width: '736px',
         height: '353px',
-        gap: '24px'
+        gap: '24px',
+        marginBottom: '40px'
       }}
     >
       {/* Hero Badge */}
@@ -55,7 +56,8 @@ export default function HeroContent() {
           lineHeight: '130%',
           letterSpacing: '-0.02em',
           color: 'rgba(0, 0, 0, 1)',
-          margin: 0
+          margin: 0,
+         
         }}
       >
         Coup lets you, your team, or AI workflows send iMessages directly from your phone number, running securely on your Mac or Mac Mini.
